@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="서울과학기술대학교 웹인터페이스디자인2 5주차 과제입니다.">
+    <meta name="author" content="Seong Kim">
+	<link rel="stylesheet" href="reset.css">
+	<title> virtual plantation</title>
+
+</head>
+
+	<style type="text/css">
+		
+		html {
+			font-size: 16pt;
+		}
+
+		nav {
+		position: sticky;
+		top: 0;
+		z-index: 20;
+		background: none;
+		display: flex;
+		justify-content: space-between;
+		}
+
+		nav a { 
+		height: max(2vh, 1.8vh);
+		color: red;
+		font-size: max(2.4vh, 2.3vh);
+		padding-top: 1vw;
+		padding-right: 1vw;
+		}
+
+		.notice {
+    	padding: 10px;
+    	position: absolute;
+    	display: inline-block;
+    	color: white;
+    	top: 95%;
+    	left: 50%;
+    	transform: translate(-50%, -50%);
+    	text-align: center;
+		}
+
+		.helpBox {
+			display: none;
+  			position: fixed;
+  			width: 50vw;
+  			height: 30vh;
+  			top: 50%;
+  			left: 50%;
+  			transform: translate(-50%, -50%);
+  			/*transition: opacity 500ms;*/
+  			z-index: 900;
+  			background-color: black;
+  			color: white;
+  			padding: 15px 15px 5px 15px;
+  			word-break: break-all;
+  			font-size: 0.8rem;
+			}
+
+		.close {
+			align-self: center;
+			font-size: 2rem;
+			}
+
+		section {}
+		
+		.flexContain {
+			display: flex;
+			justify-content: center;
+		}
+
+		.plantBox {
+			width: 100vw;
+			height: 100vh;
+			background-color: blue;
+		}
+		menu {}
+
+		footer {
+		margin: 1rem;
+		font-size: 0.8rem;
+		}
+
+
+		p {}
+
+	</style>
+
+<body>
+	<nav> 
+		<a>tools</a>
+		<a>vitural plantation</a>
+		<a class="helpopen" onClick="javascript:popOpen();">help</a>
+	</nav>
+
+	<section class= "flexContain">
+		<div class="plantBox">
+		</div>
+	</section>
+
+	<p class="notice">
+		웹에서 식물을 길러 보세요.
+	</p>
+
+<!-- popup -->
+	<div id="help" class="helpBox">
+    	<p>번거로운 현실의 식물대신 가상의 식물을 기르세요. 이 식물은 햇빛을 보지 않고, 공간도 차지하지 않습니다. 웹서핑을 하면서 가끔씩 들여다 보기만 하면 됩니다. </p>
+    <a class="helpClose, close" onClick="javascript:popClose();">x</a>
+	</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script type="text/javascript">
+
+	function popOpen() {
+    	var helpPop = $('.helpBox'); 
+    	$(helpPop).show();
+	}
+	
+	function popClose() {
+	var helpPop = $('.helpBox');
+	$(helpPop).hide();
+	}
+
+</script>
+</html>
